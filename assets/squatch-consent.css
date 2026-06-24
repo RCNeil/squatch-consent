@@ -1,0 +1,62 @@
+#squatch-consent-banner {
+	display: block;
+	position: fixed;
+	bottom: 12px;
+	left: 12px;
+	box-sizing: border-box;
+	width: 240px;
+	max-width: 100%;
+	padding: 18px;
+	border-radius: 8px;
+	z-index: 9999;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+	
+	background: var(--sq-bg);
+	color: var(--sq-text);
+}
+
+div#squatch-consent-banner p {
+	font-size: 14px;
+	line-height: 125%;
+	margin:0;
+	padding:0;
+	color: var(--sq-text);
+}
+
+div#squatch-consent-banner p a {
+	color: var(--sq-text);
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+#squatch-consent-banner .squatch-consent-inner {
+	display: flex;
+	flex-flow: column;
+	gap: 12px;
+}
+
+.squatch-consent-actions {
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	gap: 12px;
+}
+
+.squatch-consent-actions button {
+	display: block;
+	flex: 1;
+	border: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: 120ms ease all;
+	font-size: 16px;
+	line-height: 100%;
+	background: var(--sq-button);
+	color: var(--sq-button-text);
+}
+
+.squatch-consent-actions button#squatch-consent-reject {
+	background: transparent;
+	color: var(--sq-text);	
+}
