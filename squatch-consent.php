@@ -9,15 +9,14 @@ Author URI: https://squatchcreative.com
 */
 
 $plugin_data = get_file_data(__FILE__,array('Version' => 'Version'));
-$plugin_version = $plugin_data['Version'];
-
+define('SQUATCH_CONSENT_VERSION', $plugin_data['Version']);
 define('SQUATCH_CONSENT_PLUGIN', plugin_dir_url(__FILE__));
 define('SQUATCH_CONSENT_PATH', plugin_dir_path(__FILE__));
 
 add_action('wp_enqueue_scripts', 'squatch_consent_enqueue_assets');
 function squatch_consent_enqueue_assets() {	
-	wp_enqueue_style( 'squatch-consent', SQUATCH_CONSENT_PLUGIN . 'assets/squatch-consent.css',	array(), $plugin_version);
-	wp_enqueue_script('squatch-consent', SQUATCH_CONSENT_PLUGIN . 'assets/squatch-consent.js', array(), $plugin_version, true);	
+	wp_enqueue_style( 'squatch-consent', SQUATCH_CONSENT_PLUGIN . 'assets/squatch-consent.css',	array(), SQUATCH_CONSENT_VERSION);
+	wp_enqueue_script('squatch-consent', SQUATCH_CONSENT_PLUGIN . 'assets/squatch-consent.js', array(), SQUATCH_CONSENT_VERSION, true);	
 	wp_localize_script(
 		'squatch-consent',
 		'squatchConsentData',
